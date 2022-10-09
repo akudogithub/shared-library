@@ -71,7 +71,8 @@ pipeline{
 		}
 		stage('6-uat'){
 			steps{
-				sh 'uptime'
+				git branch: 'main',
+				       url: "${repoUrl}"
 			}
 		}
 		stage('prod'){
